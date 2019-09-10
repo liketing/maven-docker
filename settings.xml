@@ -2,14 +2,7 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-
-  <localRepository>/opt/mvn_repo</localRepository>
-
-  <pluginGroups>
-  </pluginGroups>
-  <proxies>
-  </proxies>
-<mirrors>
+    <mirrors>
         <mirror>
             <id>mirror</id>
             <mirrorOf>!rdc-releases,!rdc-snapshots</mirrorOf>
@@ -19,17 +12,17 @@
 
     </mirrors>
     <servers>
-    <server>
-        <id>rdc-releases</id>
-        <username>Tl13xp</username>
-        <password>cmT7apfe1f</password>
-    </server>
-    <server>
-        <id>rdc-snapshots</id>
-        <username>Tl13xp</username>
-        <password>cmT7apfe1f</password>
-    </server>
-</servers>
+        <server>
+            <id>rdc-releases</id>
+            <username>Tl13xp</username>
+            <password>cmT7apfe1f</password>
+        </server>
+        <server>
+            <id>rdc-snapshots</id>
+            <username>Tl13xp</username>
+            <password>cmT7apfe1f</password>
+        </server>
+    </servers>
     <profiles>
         <profile>
             <id>nexus</id>
@@ -54,14 +47,26 @@
                         <enabled>true</enabled>
                     </snapshots>
                 </repository>
-                  <repository>
-                      <id>rdc-releases</id>
-                      <url>https://repo.rdc.aliyun.com/repository/70373-release-t5I5TC/</url>
-                  </repository>
-                  <repository>
-                      <id>rdc-snapshots</id>
-                      <url>https://repo.rdc.aliyun.com/repository/70373-snapshot-hY8Xgn/</url>
-                  </repository>
+                <repository>
+                    <id>rdc-releases</id>
+                    <url>https://repo.rdc.aliyun.com/repository/70373-release-t5I5TC/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>rdc-snapshots</id>
+                    <url>https://repo.rdc.aliyun.com/repository/70373-snapshot-hY8Xgn/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
@@ -113,4 +118,6 @@
         <activeProfile>nexus</activeProfile>
 
     </activeProfiles>
+
+
 </settings>
